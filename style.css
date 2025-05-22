@@ -1,0 +1,229 @@
+:root {
+  --light-bg: #f4f4f4;
+  --light-text: #333;
+  --dark-bg: #1e1e1e;
+  --dark-text: #f9f9f9;
+  --primary: #4caf50;
+  --secondary: #ff9800;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light {
+  background: var(--light-bg);
+  color: var(--light-text);
+}
+
+body.dark {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.calculator {
+  background: inherit;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  padding: 25px 20px;
+  width: 320px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+#display {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.5rem;
+  text-align: right;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: inherit;
+  color: inherit;
+  border: 2px solid var(--primary);
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: var(--secondary);
+}
+
+.operator {
+  background: #2196f3;
+}
+
+.equal {
+  grid-column: span 2;
+  background: #e91e63;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+#toggleTheme {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: #555;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* ... existing variables and styles ... */
+
+/* Add fade-in animation to calculator */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.calculator {
+  background: inherit;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  padding: 25px 20px;
+  width: 320px;
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Button press animation */
+.btn {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Hover animations for buttons */
+.btn:hover {
+  background: var(--secondary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth transition for dark/light mode */
+body {
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+#display {
+  transition: background 0.4s, color 0.4s;
+}
+
+/* Smooth toggle button animation */
+#toggleTheme {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#toggleTheme:hover {
+  background: #777;
+  transform: rotate(10deg);
+}
+
+
+/* Style different button types with colors */
+.btn {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease, box-shadow 0.2s;
+}
+
+/* Numbers: light green */
+.btn.number {
+  background-color: #4caf50;
+  color: white;
+}
+.btn.number:hover {
+  background-color: #66bb6a;
+}
+
+/* Operators: blue */
+.btn.operator {
+  background-color: #2196f3;
+  color: white;
+}
+.btn.operator:hover {
+  background-color: #42a5f5;
+}
+
+/* Special functions: orange */
+.btn.clear,
+.btn.delete {
+  background-color: #ff9800;
+  color: white;
+}
+.btn.clear:hover,
+.btn.delete:hover {
+  background-color: #ffb74d;
+}
+
+/* Equals button: pink/red */
+.btn.equal {
+  background-color: #e91e63;
+  color: white;
+}
+.btn.equal:hover {
+  background-color: #f08162;
+}
+
+/* Dot and percentage: purple */
+.btn.dot,
+.btn.percent {
+  background-color: #48baad;
+  color: white;
+}
+.btn.dot:hover,
+.btn.percent:hover {
+  background-color: #ba68c8;
+}
